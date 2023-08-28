@@ -39,9 +39,9 @@
     </div>
   </nav>
   <section id="profile" aria-labelledby="profile-heading">
-    <div class="section__pic-container">
-      <img src="./assets/profile-pic.png" alt="Arthur Neto profile picture">
-    </div>
+    <a id="scroll-to-bottom" href="#contact" aria-label="Navigate to Contact section">
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow">
+    </a>
     <div class="section__text">
       <p class="section__text__p1">Hello, I'm</p>
       <h1 id="profile-heading" class="title">Arthur Neto</h1>
@@ -51,10 +51,10 @@
         <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
       </div>
       <div id="socials-container">
-        <a href="https://linkedin.com/" aria-label="LinkedIn profile">
+        <a href="https://www.linkedin.com/in/arthur-neto/" aria-label="LinkedIn profile">
           <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon">
         </a>
-        <a href="https://github.com/" aria-label="GitHub profile">
+        <a href="https://github.com/artneto?tab=repositories" aria-label="GitHub profile">
           <img src="./assets/github.png" alt="GitHub icon" class="icon">
         </a>
       </div>
@@ -64,9 +64,7 @@
     <p class="section__text__p1">Get To Know More</p>
     <h1 id="about-heading" class="title">About Me</h1>
     <div class="section-container">
-      <div class="section__pic-container">
-        <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic">
-      </div>
+      
       <div class="about-details-container">
         <div class="about-containers">
           <div class="details-container">
@@ -106,5 +104,20 @@
     <p>Copyright © 2023 Arthur Neto. All Rights Reserved.</p>
   </footer>
   <script src="script.js"></script>
+  <script>
+  
+    const scrollToBottomLink = document.getElementById("scroll-to-bottom");
+
+  
+    scrollToBottomLink.addEventListener("click", (event) => {
+      event.preventDefault(); 
+      const contactSection = document.getElementById("contact"); 
+      const contactSectionTop = contactSection.getBoundingClientRect().top + window.scrollY; 
+      window.scrollTo({
+        top: contactSectionTop,
+        behavior: "smooth"
+      });
+    });
+  </script>
 </body>
 </html>
